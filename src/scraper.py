@@ -29,9 +29,8 @@
             self.name_list = []
             self.wiki_url_list = []
             self.first_paragraph_list = []
-            self.run_scraping = self.run_scraping
-            self.soup_list =[]
-
+            
+            
         def get_cookie(self):
             # allow to fetch a cookie to get access to the website & keep it active with session use
             try:
@@ -79,26 +78,30 @@
                 except Exception:
                     print(f"api get_leaders_data issue, code : {leaders_req.status_code}")
             return leaders_main_data_list
+        
+        
+        def scrap_url(self, url):
+            url_req = self.session.get(url)
+            content = url_req.text
+            soup = BeautifulSoup(content, "html.parser")
+            soup_list = soup_list.append(soup)
+            return self.soup
+
+        
 
 #with ThreadPoolExecutor() as pool:
 # toute_page_wiki = list(pool.map(self.session.get, list(tuple[2])))
 #... process the list of the soup objects... (find tags...) 
 
-   for tuple in self.get_leaders_data():  # loop through the leaders_main_data_list
+   """for tuple in self.get_leaders_data():  # loop through the leaders_main_data_list
             try:
                 url_req = self.session.get(tuple[2])  # to scrap all the wikipedia pages
                 content = url_req.text
-                soup = BeautifulSoup(content, "html.parser")
+                soup = BeautifulSoup(content, "html.parser")"""
 
-        def run_scraping(self, url):
-            url_req = self.session.get(url)
-            content = url_req.text
-            soup = BeautifulSoup(content, "html.parser")
-            self.soup_list = self.soup_list.append(soup)
-            return self.soup_list
+        
     
-with ThreadPoolExecutor(max_workers=10) as executor:
-        futures = [executor.submit(self.run_scraping, tuple[2]) for tuple in self.get_leaders_data()]
+
     
 
 
