@@ -77,6 +77,25 @@ class WikiScraper:
                 print(f"api get_leaders_data issue, code : {leaders_req.status_code}")
         return leaders_main_data_list
 
+""" with ThreadPoolExecutor() as pool:
+    # toute_page_wiki = list(pool.map(self.session.get, list(tuple[2])))"
+
+
+ tuples = self.get_leaders_data()
+
+def run_scraping(url):
+    url_req = self.session.get(url)
+    content = url_req.text
+    soup = BeautifulSoup(content, "html.parser")
+    return soup
+
+with ThreadPoolExecutor(max_workers=10) as executor:
+    futures = [executor.submit(run_scraping, tuple[2]) for tuple in tuples]
+
+... process the list of the soup objects... (find tags...) 
+
+"""
+
     def get_leaders_paragraph(self):
         # get 4 lists of country, name, wikipedia url and wikipedia page 1st paragraph for all leaders
         self.country4prez_list = []
