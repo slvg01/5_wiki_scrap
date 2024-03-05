@@ -9,7 +9,7 @@ The main task of the code is to scrape global leaders' information from Wikipedi
 ## Installation and Running
 - Virtual environment information  in `requirements.txt`  >>>>  (`pip install -r requirements.txt`).
 - Run `python main.py`
-- Python version: 3.11.5.
+- Python version: 3.11.5 (notably for concurrent.futures library).
 - The `src` folder contains the class and functions script.
 
 
