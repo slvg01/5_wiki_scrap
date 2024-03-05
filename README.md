@@ -6,6 +6,10 @@ The main task of the code is to scrape global leaders' information from Wikipedi
 - Scraping their respective Wikipedia pages to fetch the first paragraph of their biography.
 - Including all this information in a JSON file as the final output.
 
+ ## additional Features (On  this nice_to_have branch) - ON GOING
+- A switch to store the output as CSV instead of JSON.
+- Speed up the execution using multiprocessing.
+
 ## Installation and Running
 - Virtual environment information  in `requirements.txt`  >>>>  (`pip install -r requirements.txt`).
 - Run `python main.py`
@@ -13,7 +17,5 @@ The main task of the code is to scrape global leaders' information from Wikipedi
 - The `src` folder contains the class and functions script.
 
 
-## additional Features (On the nice_to_have branch) - ON GOING
-- A switch to store the output as CSV instead of JSON.
-- Speed up the execution using multiprocessing.
+
 
